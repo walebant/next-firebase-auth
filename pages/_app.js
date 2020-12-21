@@ -1,15 +1,23 @@
-// import '../styles/globals.css';
+import dynamic from 'next/dynamic';
+import 'nprogress/nprogress.css';
 import { AuthProvider } from '../context/auth';
-import { ThemeProvider, CSSReset } from '@chakra-ui/core';
+import { ChakraProvider } from '@chakra-ui/react';
+
+const Progress = dynamic(
+  () => {
+    return import('../components/Progress');
+  },
+  { ssr: false }
+);
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ThemeProvider>
-      <CSSReset />
+    <ChakraProvider>
       <AuthProvider>
+        <Progress />
         <Component {...pageProps} />
       </AuthProvider>
-    </ThemeProvider>
+    </ChakraProvider>
   );
 }
 

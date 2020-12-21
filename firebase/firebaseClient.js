@@ -1,8 +1,12 @@
 import firebase from 'firebase';
-import config from './config';
+import { config } from './config';
 
-export default function firebaseClient() {
+const firebaseClient = () => {
   if (!firebase.apps.length) {
-    firebase.initializeApp(config);
+    return firebase.initializeApp(config);
   }
-}
+
+  return firebase.app();
+};
+
+export default firebaseClient;

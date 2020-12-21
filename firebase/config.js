@@ -1,4 +1,4 @@
-export default config = {
+export const config = {
   apiKey: 'AIzaSyBjkCEDN8T2BbwFxSpf7Qwqq9u9t4jtd8Y',
   authDomain: 'next-firebase-auth-c3aaa.firebaseapp.com',
   projectId: 'next-firebase-auth-c3aaa',

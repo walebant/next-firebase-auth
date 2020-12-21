@@ -1,5 +1,5 @@
 import admin from 'firebase-admin';
-import config from './config';
+import { config } from './config';
 import serviceAccount from './secrets.json';
 
 export default verifyIdToken = token => {
